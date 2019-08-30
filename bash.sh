@@ -6,12 +6,25 @@ make_dir () {
     echo >> $1/$1_input.txt
 }
 
-dir=day$1
+setup_dir () {
+    DIR=day$1
+    if [ -d $DIR ]; then
+        echo "Directory $DIR already exists"
+    else
+        make_dir $DIR
+        echo "Successfully made directory $DIR"
+    fi
+}
 
-if [ -d $dir ]; then
-    echo "Directory $dir already exists"
+if [ $1 == 'a' ]; then
+    COUNT=1
+    while [ $COUNT -le 25 ]; do
+        setup_dir $COUNT
+        ((COUNT++))
+    done
+    echo "Made all remaining directories"
+elif [ $1 -le 25 ] && [ $1 -gt 0 ]; then
+    setup_dir $1
 else
-    make_dir $dir
-    echo "Successfully made directory $dir"
+    echo "Please enter a number in the range 1-25"
 fi
-
