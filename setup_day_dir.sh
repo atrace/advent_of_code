@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USAGE="
-Useage: $0 [-h] [-a] [n]
+Usage: $0 [-h] [-a] [n]
 Sets up directories for a given day or all days of advent of code. Creates a directory day[n] in current dir with empty files for associated text input and python script.
 
     -h    show this help message.
