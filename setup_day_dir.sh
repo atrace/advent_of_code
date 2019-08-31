@@ -11,7 +11,7 @@ Sets up directories for a given day or all days of advent of code. Creates a dir
 
 make_dir () {
     mkdir $1
-    echo "input_file = \"./$1_input.txt\"" > $1/$1_script.py
+    echo "input_file = \"$1/$1_input.txt\"" > $1/$1_script.py
     echo >> $1/$1_input.txt
 }
 
